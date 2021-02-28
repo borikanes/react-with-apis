@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Feed.css';
 import Places from './Places';
 
-function Feed() { 
+function Feed() {
     const [places,setPlaces] = useState([])
     const [query,setQuery] = useState("")
     const [showPlaces,setShowPlaces] = useState(false)
@@ -13,7 +13,7 @@ function Feed() {
             const reqOptions = {
                 method: 'GET',
                 headers: {
-                    "x-rapidapi-key": `${process.env.REACT_APP_API_KEY}`,
+                    "x-rapidapi-key": "f7fc70c755msh7a22b8eef5d6ae2p18c70ejsnd6dfb83277f3",
                     "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
                     "useQueryString": true
                 }
@@ -31,7 +31,7 @@ function Feed() {
     return(
         <div className="feed">
            <form onSubmit={handleSubmit}>
-                <label htmlFor="queryInput">State or Country:</label>
+                <label htmlFor="queryInput">State or Country:::</label>
                 <input id="queryInput" value={query} onChange={e => setQuery(e.target.value)} required/>
                 <button className="search">Submit</button>
            </form>
